@@ -1,0 +1,18 @@
+import { useForm } from "react-hook-form";
+
+const Login = () => {
+    const { register, handleSubmit } = useForm();
+
+    const onSubmit = (data) => {
+        // Handle login
+        console.log(data);
+    };
+
+    return (
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <TextField label="Email" {...register("email", { required: true })} />
+            <TextField type="password" label="Password" {...register("password", { required: true })} />
+            <Button type="submit">Login</Button>
+        </form>
+    );
+};

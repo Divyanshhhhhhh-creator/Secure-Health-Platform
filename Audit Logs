@@ -1,0 +1,14 @@
+import { DataGrid } from "@mui/x-data-grid";
+
+const logs = [
+    { id: 1, action: "Request Data", timestamp: "2025-01-01", user: "Dr. John Doe" },
+    { id: 2, action: "Approve Request", timestamp: "2025-01-02", user: "Patient A" },
+];
+
+const AuditLogs = () => (
+    <DataGrid rows={logs} columns={[
+        { field: "action", headerName: "Action", width: 200 },
+        { field: "timestamp", headerName: "Timestamp", width: 200 },
+        { field: "user", headerName: "User", width: 150 },
+    ]} />
+);
